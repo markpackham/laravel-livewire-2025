@@ -1,3 +1,18 @@
 <div>
-    {{-- Care about people's approval and you will be their prisoner. --}}
+  <header class="flex justify-between">
+    <div>
+      <h2>Hi, {{ $name }}</h2>
+      <p>Here's a list of your book reviews...</p>
+    </div>
+  </header>
+
+  <ul class="list">
+    @foreach($books as $book)
+      <li wire:key="{{ $book->id }}">
+        <h3>{{ $book->title }}</h3>
+        <h4>{{ $book->author }}</h4>
+        <p>Rating: {{ $book->rating }}/10</p>
+      </li>
+    @endforeach
+  </ul>
 </div>
