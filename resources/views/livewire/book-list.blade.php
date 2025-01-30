@@ -4,6 +4,12 @@
       <h2>Hi, {{ $name }}</h2>
       <p>Here's a list of your book reviews...</p>
     </div>
+
+    <form action="">
+      <span class="mr-2">Your Name: </span>
+      <input type="text" wire:model="name">
+      <button>Update</button>
+    </form>
   </header>
 
     <ul class="list">
