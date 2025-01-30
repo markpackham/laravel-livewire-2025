@@ -6,6 +6,12 @@
     </div>
   </header>
 
+  <div>
+    <p>Count: {{$count}}</p>
+    <button wire:click="increment(1)">+1</button>
+    <button wire:click="increment(2)">+2</button>
+  </div>
+
   <ul class="list">
     @foreach($books as $book)
       <li wire:key="{{ $book->id }}">
