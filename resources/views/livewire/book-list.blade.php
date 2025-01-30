@@ -5,11 +5,21 @@
       <p>Here's a list of your book reviews...</p>
     </div>
 
-    <form action="">
+    {{-- <form action="">
+      <span class="mr-2">Your Name: </span>
+      <input type="text" wire:model="name"> --}}
+      {{-- Prevent default form refresh, instead refresh "name" with new value so DOM updated --}}
+      {{-- <button wire:click.prevent="$refresh">Update</button>
+    </form> --}}
+
+    {{-- Does same as above but neater focusing on form's submit --}}
+    {{-- We change the once hard coded "name" to whatever we enter in the form --}}
+    <form wire:submit="$refresh">
       <span class="mr-2">Your Name: </span>
       <input type="text" wire:model="name">
       <button>Update</button>
     </form>
+
   </header>
 
     <ul class="list">
