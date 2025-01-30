@@ -8,11 +8,9 @@ use Livewire\Component;
 class BookList extends Component
 {
   public $name = 'Mario';
-  public $count = 0;
 
-  public function increment($number)
-  {
-    $this->count += $number;
+  public function delete(Book $book){
+    $book->delete();
   }
 
   public function render()
