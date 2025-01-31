@@ -30,10 +30,9 @@
       <input type="text" wire:model.live.debounce.500ms="name">
       <button>Update</button>
     </form>
-
   </header> --}}
 
-  <livewire:page-header />
+  <livewire:page-header subtitle="Here is a list of your books..." />
 
     <ul class="list">
     @foreach($books as $book)
