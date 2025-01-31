@@ -1,9 +1,11 @@
 <div>
-  <header class="flex justify-between">
+
+{{-- Header now moved into it's own component page-header.blade.php --}}
+  {{-- <header class="flex justify-between">
     <div>
       <h2>Hi, {{ $name }}</h2>
       <p>Here's a list of your book reviews...</p>
-    </div>
+    </div> --}}
 
     {{-- <form action="">
       <span class="mr-2">Your Name: </span>
@@ -23,13 +25,15 @@
     {{-- Same as above but modifies "name" .live after every keystroke --}}
     {{-- If we want to save on resources we add ".debounce" so data is entered only after a set time
     that we stopped typing eg 500 milliseconds --}}
-    <form wire:submit="$refresh">
+    {{-- <form wire:submit="$refresh">
       <span class="mr-2">Your Name: </span>
       <input type="text" wire:model.live.debounce.500ms="name">
       <button>Update</button>
     </form>
 
-  </header>
+  </header> --}}
+
+  <livewire:page-header />
 
     <ul class="list">
     @foreach($books as $book)
