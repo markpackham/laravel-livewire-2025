@@ -1,7 +1,7 @@
 <header class="flex justify-between">
     <div>
         <h2>Hi, {{ $name }}</h2>
-        <p>Here's a list of your book reviews...</p>
+        <p>{{$subtitle}}</p>
     </div>
     <form wire:submit="$refresh">
         <span class="mr-2">Your Name: </span>
