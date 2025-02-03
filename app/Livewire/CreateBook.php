@@ -13,6 +13,14 @@ class CreateBook extends Component
 
     public function save()
     {
+
+        $this->validate([
+            'title' => 'string|required|min:3|max:300',
+            'author' => 'string|required|min:3|max:300',
+            'rating' => 'integer|required|min:1|max:10',
+
+        ]);
+
         Book::create([
             'title' => $this->title,
             'author' => $this->author,
