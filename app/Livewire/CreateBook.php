@@ -14,7 +14,7 @@ class CreateBook extends Component
 
     #[Rule('string|required|min:3|max:300')]
     public $author;
-    
+
     #[Rule('integer|required|min:1|max:10')]
     public $rating;
 
@@ -38,7 +38,10 @@ class CreateBook extends Component
             'rating' => $this->rating
         ]);
 
-        $this->redirect('/');
+        // When we set navigate to true instead of regular link behavior we use
+        // Livewire's version of Single Page Application loading so it is faster
+        // so whenever a new page loads we don't need to request EVERYTHING again & again
+        $this->redirect('/', navigate: true);
     }
 
     public function render()
