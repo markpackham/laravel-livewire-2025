@@ -8,6 +8,7 @@ use Livewire\Component;
 
 class BookList extends Component
 {
+  public $term = '';
 
   public function delete(Book $book)
   {

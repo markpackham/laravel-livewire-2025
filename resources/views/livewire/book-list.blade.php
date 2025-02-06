@@ -34,6 +34,9 @@
 
   <livewire:page-header subtitle="Here is a list of your books..." />
 
+  {{-- Only take in the user's result if we leave the field for 300 milliseconds without typing --}}
+  <input type="text" wire:model.live.debounce.300ms="term" placeholder="Search for Books..." class="search">
+
     <ul class="list">
     @foreach($books as $book)
       <li wire:key="{{ $book->id }}">
