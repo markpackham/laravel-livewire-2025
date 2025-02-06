@@ -20,6 +20,15 @@ class BookList extends Component
 
   public function render()
   {
+    // If user enters in the search input look for the book
+    // use Laravel's Eloquent for database search
+    if($this->term){
+      return view('livewire.book-list', [
+        'books' => Book::where('title', 'LIKE', "%{$this->term}%")->get(),
+      ]);
+    }
+
+    // Show all books if nothing entered in search input
     return view('livewire.book-list', [
       'books' => Book::all()
     ]);
